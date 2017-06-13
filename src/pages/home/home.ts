@@ -19,7 +19,7 @@ export class HomePage {
 
   // Your settings go here
   timeToLive : number = 10;                         // Number of seconds before the verification_status expires
-  youOwnPhoneNumber : string = "+2347032793568";    // Your own phone number. Supply via navParams or elsewise.
+  youOwnPhoneNumber : string = "+00000000000";    // Your own phone number. Supply via navParams or elsewise.
   transactionReference : number = this.getRandomInt(10000,100000);  // supply yours or use this.getRandomInt() to get a random number
   duphluxToken : string = '34792cda48f4f90736d3faed467503568b347ee0'; //get yours at https://duphlux.com
   // 34792cda48f4f90736d3faed467503568b347ee0 <--- testing token. See https://duphlux.com/documentation under "Call Simulator"
