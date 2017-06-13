@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding text-center>
+    <h3>Call this number below:</h3>
+    <h1>{{dupluxNumber}}</h1>
+    <p>Once we see your call you'll be verified</p>
+    <div>
+      <timer #timer [timeInSeconds]="timeToLive" [autoStart]="false" (onTimerEnd)="timerEnd($event)"></timer>
+    </div>
+
+    <!-- <div>
+      <h1 padding class="success">Successfully Verified</h1>
+    </div> -->
+
+
+    <button [disabled]="!enableCallButton" ion-button icon-left (click)="makeTheCall()">
+      <ion-icon name="call"></ion-icon> Make the call
+    </button>
+
+    <p>If you don't a Verification success here, tap the button below to verify:</p>
+    <button icon-left [disabled]="!enableVerifyButton" ion-button color="dark" (click)="verifyRequestStatus()">
+      <ion-icon name="refresh-circle"></ion-icon>
+      Verify Request
+    </button>
+
+  </div>
+</ion-content>

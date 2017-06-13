@@ -1,0 +1,14 @@
+<!-- Generated template for the Timer component -->
+<div>
+  <h1 *ngIf="showSpinner">
+    <ion-spinner></ion-spinner>
+  </h1>
+  <h1 no-margin *ngIf="!showSpinner">
+    {{timeInSeconds}}
+  </h1>
+  <h6 no-margin>Seconds</h6>
+  <div *ngIf="timerEnded" padding>
+    <!-- {{timerMessage.expired.color}} -->
+    <ion-badge color="{{badgeColor}}">{{badgeMessage}}</ion-badge>
+  </div>
+</div>
