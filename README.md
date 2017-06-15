@@ -15,7 +15,7 @@ A fully working Ionic 2 starter for call based authentication requests with Duph
   - Run `ionic serve`
 
 # Testing in the browser
-head to https://duphlux.com/documentation under "Call Simulator" to simulate a call authentication in the browser.
+head to https://duphlux.com/documentation#simulate-call to simulate a call authentication in the browser, making testing with `ionic serve` easy
 
 # Documentation
   - https://duphlux.com/documentation
