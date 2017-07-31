@@ -13,23 +13,17 @@
     <h1>{{dupluxNumber}}</h1>
     <p>Once we see your call you'll be verified</p>
     <div>
-      <timer #timer [timeInSeconds]="timeToLive" [autoStart]="false" (onTimerEnd)="timerEnd($event)"></timer>
+      <timer #timer [timeInSeconds]="DuphluxSettings.timeout" [autoStart]="false" (onTimerEnd)="timerEnd($event)"></timer>
     </div>
-
-    <!-- <div>
-      <h1 padding class="success">Successfully Verified</h1>
-    </div> -->
-
 
     <button [disabled]="!enableCallButton" ion-button icon-left (click)="makeTheCall()">
       <ion-icon name="call"></ion-icon> Make the call
     </button>
 
-    <p>If you don't a Verification success here, tap the button below to verify:</p>
+    <p>If you don't see a verification yet, tap the button below to verify:</p>
     <button icon-left [disabled]="!enableVerifyButton" ion-button color="dark" (click)="verifyRequestStatus()">
       <ion-icon name="refresh-circle"></ion-icon>
       Verify Request
     </button>
-
   </div>
 </ion-content>

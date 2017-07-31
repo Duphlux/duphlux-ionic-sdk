@@ -60,7 +60,7 @@ export class Timer implements OnInit {
     }, 1000);
   }
 
-  
+
   setTimerMessage(status:string) {
     // console.log('recieved from parent.ts: ', status);
     // console.log('color for badge is :', this.timerMessage[status].color);
