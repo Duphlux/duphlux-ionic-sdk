@@ -1,5 +1,5 @@
 // Developed by Audacitus. Homecrafted Themes and Apps for the IonicFramework
-// For custom themes, and plugins in Ionic 2
+// For custom themes, and plugins in Ionic 2/3
 // https://www.audacitus.com/site
 
 import { Component, ViewChild } from '@angular/core';
@@ -31,9 +31,9 @@ export class HomePage {
   // Your settings go here
   DuphluxSettings = {
     timeout : 60, //Number                         // Number of seconds before the verification_status expires
-    phone_number :  "+0000000000000", //string    // Your own phone number. Supply via navParams or elsewise.
+    phone_number :  "+000000000000", //string    // Your own phone number. Supply via navParams or elsewise.
     transaction_reference : this.getRandomInt(10000,100000), //string  // supply yours or use this.getRandomInt() to get a random number
-    redirect_url : "https://audacitus.com/site"
+    redirect_url : "https://yourdomain.com"
   }
   // End Settings
 
@@ -111,8 +111,17 @@ export class HomePage {
           console.log(this.status.PayLoad.data);
           // console.log(this.getStatusOfToken(this.status));
           let status = this.getStatusOfToken(this.status);
+
           if(status.verification == 'verified'){
-            this.toaster.ToastMsg(this.duphlux.getVerificationMessage(status.verification), 'bottom');
+             let alert = this.alert.create({
+              title: 'Verification Successful',
+              // subTitle: this.DuphluxSettings.phone_number+' has been verified',
+              subTitle: 'You number has been verified!',
+              buttons: ['Dismiss']
+            });
+            alert.present();
+
+            this.navigateOnVerificationSuccess()
           }
           else if(status.verification == 'pending'){
             this.toaster.ToastMsg(this.duphlux.getVerificationMessage(status.verification), 'bottom');
